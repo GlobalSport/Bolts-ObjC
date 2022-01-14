@@ -11,7 +11,7 @@
 @import XCTest;
 
 #if SWIFT_PACKAGE
-#import "../Bolts/Bolts.h"
+#import "../../Sources/Bolts/Bolts.h"
 #else
 #import <Bolts/Bolts.h>
 #endif

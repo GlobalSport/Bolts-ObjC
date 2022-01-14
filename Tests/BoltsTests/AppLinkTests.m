@@ -13,7 +13,7 @@
 @import ObjectiveC.runtime;
 
 #if SWIFT_PACKAGE
-#import "../Bolts/Bolts.h"
+#import "../../Sources/Bolts/Bolts.h"
 #else
 #import <Bolts/Bolts.h>
 #endif
@@ -27,6 +27,7 @@ static NSMutableArray *openedUrls;
 @implementation AppLinkTests
 
 - (NSString *)stringByEscapingQueryString:(NSString *)string {
+    
     return (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL,
                                                                                  (CFStringRef)string,
                                                                                  NULL,

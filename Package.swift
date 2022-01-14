@@ -6,28 +6,28 @@ import PackageDescription
 let package = Package(
     name: "Bolts",
     defaultLocalization: "en",
+    platforms: [.iOS(.v9)],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "Bolts",
-            targets: ["Bolts"]),
+            targets: ["Bolts-iOS","Bolts"]),
     ],
     targets: [
         .target(
             name: "Bolts",
-            dependencies: [.target(name: "Bolts-iOS")],
-            path: "Bolts",
-            exclude: ["Info.plist"],
-            publicHeadersPath: ""
+            dependencies: ["Bolts-iOS"],
+            path: "Sources/Bolts",
+            exclude: ["Info.plist"]
         ),
         .target(
             name: "Bolts-iOS",
-            path: "Bolts-iOS"
+            path: "Sources/Bolts-iOS"
         ),
 //        .testTarget(
 //            name: "Bolts-Tests",
-//            dependencies: [.target(name: "Bolts-iOS")],
-//            path: "BoltsTests",
+//            dependencies: ["Bolts"],
+//            path: "Tests/BoltsTests",
 //            exclude: ["BoltsTests-Info.plist"]
 //        )
     ]
